@@ -26,10 +26,10 @@ class LocaleController extends GetxController {
     if (sharedPrefLang == "ar") {
       language = const Locale("ar");
     } else if (sharedPrefLang == "en") {
-      language = const Locale("en");
+      language = const Locale("ar");
     } else {
       language =
-          Locale(Get.deviceLocale!.languageCode);
+          language = const Locale("ar");
     }
     super.onInit();
   }

@@ -276,7 +276,7 @@ packages:
     source: hosted
     version: "2.6.1"
   ionicons:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: ionicons
       url: "https://pub.dartlang.org"
