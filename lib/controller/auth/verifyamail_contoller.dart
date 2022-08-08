@@ -15,6 +15,7 @@ class VerifyEmailControllerImp
 
   @override
   check(code) {
+    //change the code here
     if (code == "44444") {
       goToHome();
     } else {

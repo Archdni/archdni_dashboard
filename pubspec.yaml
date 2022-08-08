@@ -16,6 +16,13 @@ dependencies:
   firebase_database: ^9.1.0
   ionicons: ^0.2.1
   firebase_auth: ^3.6.2
+  cloud_firestore: ^3.4.3
+  image_picker_for_web: ^2.1.8
+  image_picker: ^0.8.5+3
+  image_picker_web: ^2.1.1
+  mime_type: ^1.0.0
+  oktoast: ^3.2.0
+  firebase_storage: ^10.3.4
 
 dev_dependencies:
   flutter_test:
@@ -23,10 +30,8 @@ dev_dependencies:
  
   flutter_lints: ^2.0.0
   shared_preferences: ^2.0.15
-  image_picker: ^0.8.5+3
   get: ^4.6.5
   flutter_otp_text_field: ^1.0.1
-  cloud_firestore: ^3.4.2
   cached_network_image: ^3.2.1 
    
 flutter:

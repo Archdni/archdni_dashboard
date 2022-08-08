@@ -60,6 +60,26 @@ class AppTranslations extends Translations {
               "Reset Password": "استعادة كلمة المرور",
               "Enter your new password": "أدخل كلمة المرور الجديدة",
               "OnBording": "أهلا بك في تطبيق ",
+              "hello_again_thank you_for_your_time": "أهلا بك مرة أخرى، شكرا لك على وقتك ",
+              'We appreciate your desire to communicate your association to the largest possible number of students, so we ask you to fill in data about your school accurately' : "نحن نقدر رغبتك في إيصال جمعيتك لأكبر عدد ممكن من الطلبة ولذلك نرجوا منك ملأ بينات  عن مدرستك بدقة",
+              'Home': 'الرئيسية',
+              "school_info": "بيانات المدرسة",
+              "school_name": "اسم المدرسة",
+              "school_address": "عنوان المدرسة",
+              "enter_school_address": "أدخل عنوان المدرسة",
+
+              "enter_school_name": "أدخل اسم المدرسة",
+              "school_phone": "رقم الهاتف",
+              "enter_school_phone": "أدخل رقم الهاتف",
+              "school_email": "البريد الإلكتروني",
+              "enter_school_email": "أدخل البريد الإلكتروني",
+              "school_website": "الموقع الإلكتروني",
+              "enter_school_website": "أدخل الموقع الإلكتروني",
+              "school_city": "المدينة",
+              "enter_school_city": "أدخل المدينة",
+              "select_school_logo": "أدخل شعار المدرسة",
+              "Submit": "إرسال",
+              
         },
         "en": {
           "onbording": "Welcome to the app ",
@@ -107,6 +127,13 @@ class AppTranslations extends Translations {
           "enter_your_email_to_recieve_reset_code":
               "Enter your email to recieve reset code",
               "Verify Code": "Verification Code",   
+              "Reset Password": "Reset Password",
+              "Enter your new password": "Enter your new password",
+              "OnBording": "Welcome to the app ",
+              "hello_again_thank you_for_your_time": "Hello again, thank you for your time",
+              'We appreciate your desire to communicate your association to the largest possible number of students, so we ask you to fill in data about your school accurately' : "We appreciate your desire to communicate your association to the largest possible number of students, so we ask you to fill in data about your school accurately",
+              'Home': 'Home',
+              "school_info": "School Info",
         }
       };
 }

@@ -6,10 +6,10 @@ import 'package:dashboard/core/services/services.dart';
 import 'package:dashboard/localization/transilation.dart';
 
 import 'package:dashboard/root.dart';
+import 'package:dashboard/test.dart';
 import 'package:dashboard/view/screens/home.dart';
 import 'package:dashboard/view/screens/onbording.dart';
 import 'package:dashboard/view/widget/language/changelocal.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -50,9 +50,10 @@ class MyApp extends StatelessWidget {
               color: Colors.black, fontSize: 25),
         ),
       ),
-      home: authStateConroller.isuserloggedin
-          ? Home()
-          : OnBording(),
+      home:
+      authStateConroller.isuserloggedin
+          ? const Home()
+          : const OnBording(),
          
       routes: routes,
     );
