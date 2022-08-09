@@ -41,7 +41,7 @@ class AppLoginForm extends StatelessWidget {
         AppCustomAuthButton(
           color: AppColor.primary,
           text: 'signin'.tr,
-          onPressed: () {},
+          onPressed: controller.login,
         ),
       ],
     ));

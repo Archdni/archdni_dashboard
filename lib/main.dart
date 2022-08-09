@@ -1,10 +1,13 @@
 // ignore_for_file: depend_on_referenced_packages
 
+import 'package:dashboard/controller/backend/authstate_controller.dart';
 import 'package:dashboard/core/constant/color.dart';
 import 'package:dashboard/core/services/services.dart';
 import 'package:dashboard/localization/transilation.dart';
 
 import 'package:dashboard/root.dart';
+import 'package:dashboard/test.dart';
+import 'package:dashboard/view/screens/home.dart';
 import 'package:dashboard/view/screens/onbording.dart';
 import 'package:dashboard/view/widget/language/changelocal.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +33,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     LocaleController lancontroller =
         Get.put(LocaleController());
+    AuthStateConrollerImp authStateConroller =
+        Get.put(AuthStateConrollerImp());
+     
     return GetMaterialApp(
       translations: AppTranslations(),
       debugShowCheckedModeBanner: false,
@@ -44,7 +50,10 @@ class MyApp extends StatelessWidget {
               color: Colors.black, fontSize: 25),
         ),
       ),
-      home: const OnBording(),
+      home:  authStateConroller.isuserloggedin
+          ? const Home()
+          : const OnBording(),
+        
       routes: routes,
     );
   }

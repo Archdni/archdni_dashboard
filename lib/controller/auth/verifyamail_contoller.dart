@@ -15,6 +15,7 @@ class VerifyEmailControllerImp
 
   @override
   check(code) {
+    //change the code here
     if (code == "44444") {
       goToHome();
     } else {
@@ -31,7 +32,7 @@ class VerifyEmailControllerImp
 
   @override
   goToHome() {
-    Get.offNamed(AppRoutes.home);
+    Get.offAllNamed(AppRoutes.home);
   }
 
   @override

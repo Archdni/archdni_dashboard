@@ -56,10 +56,61 @@ class AppTranslations extends Translations {
               "إرسال رمز استعادة كلمة المرور",
           "enter_your_email_to_recieve_reset_code":
               "أدخل بريدك الإلكتروني لتلقي رمز استعادة كلمة المرور",
-              "Verify Code": "رمز التحقق",
-              "Reset Password": "استعادة كلمة المرور",
-              "Enter your new password": "أدخل كلمة المرور الجديدة",
-              "OnBording": "أهلا بك في تطبيق ",
+          "Verify Code": "رمز التحقق",
+          "Reset Password": "استعادة كلمة المرور",
+          "Enter your new password":
+              "أدخل كلمة المرور الجديدة",
+          "OnBording": "أهلا بك في تطبيق ",
+          "hello_again_thank you_for_your_time":
+              "أهلا بك مرة أخرى، شكرا لك على وقتك ",
+          'We appreciate your desire to communicate your association to the largest possible number of students, so we ask you to fill in data about your school accurately':
+              "نحن نقدر رغبتك في إيصال جمعيتك لأكبر عدد ممكن من الطلبة ولذلك نرجوا منك ملأ بينات  عن مدرستك بدقة",
+          'Home': 'الرئيسية',
+          "school_info": "بيانات المدرسة",
+          "school_name": "اسم المدرسة",
+          "school_address": "عنوان المدرسة",
+          "enter_school_address":
+              "أدخل عنوان المدرسة",
+          "enter_school_name": "أدخل اسم المدرسة",
+          "school_phone": "رقم الهاتف",
+          "enter_school_phone": "أدخل رقم الهاتف",
+          "school_email": "البريد الإلكتروني",
+          "enter_school_email":
+              "أدخل البريد الإلكتروني",
+          "school_website": "الموقع الإلكتروني",
+          "enter_school_website":
+              "أدخل الموقع الإلكتروني",
+          "school_city": "المدينة",
+          "enter_school_city": "أدخل المدينة",
+          "select_school_logo":
+              "أدخل شعار المدرسة",
+          "school_description": "وصف المدرسة",
+          "enter_school_description":
+              "أدخل وصف المدرسة",
+          "Submit": "إرسال",
+          'one_more_step': 'خطوة واحدة أخرى',
+          "more_info_about_your_school_that_will_help_the_student_to_find_your_school":
+              "معلومات إضافية عن مدرستك التي ستساعد الطلبة على العثور على مدرستك",
+          "school_students_number": "عدد الطلبة",
+          "enter_school_students_number":
+              "أدخل عدد الطلبة",
+          "school_gender_type": "نوع الجنس",
+          "enter_school_gender_type":
+              "أدخل نوع الجنس",
+          "school_latitude": "خط الطول",
+          "enter_school_latitude":
+              "أدخل خط الطول",
+          "school_longitude": "خط العرض",
+          "enter_school_longitude":
+              "أدخل خط العرض",
+          "school_price": "سعر الإشتراك",
+          "enter_school_price":
+              "أدخل سعر الإشتراك",
+          "enter_image_from_school":
+              "أدخل صورة من المدرسة",
+          "latitude and longitude must be number":
+              "يجب أن يكون خط الطول والعرض أرقام",
+              "student count must be number" : "يجب أن يكون عدد الطلبة أرقام",
         },
         "en": {
           "onbording": "Welcome to the app ",
@@ -106,7 +157,52 @@ class AppTranslations extends Translations {
           "send_reset_code": "Send Reset Code",
           "enter_your_email_to_recieve_reset_code":
               "Enter your email to recieve reset code",
-              "Verify Code": "Verification Code",   
+          "Verify Code": "Verification Code",
+          "Reset Password": "Reset Password",
+          "Enter your new password":
+              "Enter your new password",
+          "OnBording": "Welcome to the app ",
+          "hello_again_thank you_for_your_time":
+              "Hello again, thank you for your time",
+          'We appreciate your desire to communicate your association to the largest possible number of students, so we ask you to fill in data about your school accurately':
+              "We appreciate your desire to communicate your association to the largest possible number of students, so we ask you to fill in data about your school accurately",
+          'Home': 'Home',
+          "school_info": "School Info",
+          "school_name": "School Name",
+          "enter_school_name":
+              "Enter School Name",
+          "school_address": "School Address",
+          "enter_school_address":
+              "Enter School Address",
+          "school_phone": "School Phone",
+          "enter_school_phone":
+              "Enter School Phone",
+          "school_email": "School Email",
+          "enter_school_email":
+              "Enter School Email",
+          "school_website": "School Website",
+          "enter_school_website":
+              "Enter School Website",
+          "school_city": "School City",
+          "enter_school_city":
+              "Enter School City",
+          "select_school_logo":
+              "Select School Logo",
+          "school_description":
+              "School Description",
+          "enter_school_description":
+              "Enter School Description",
+          "Submit": "Submit",
+          'one_more_step': 'One more step',
+          "more_info_about_your_school_that_will_help_the_student_to_find_your_school":
+              "More info about your school that will help the student to find your school",
+          "school_students_number":
+              "School Students Number",
+          "enter_school_students_number":
+              "Enter School Students Number",
+          "school_gender_type":
+              "School Gender Type",
+
         }
       };
 }

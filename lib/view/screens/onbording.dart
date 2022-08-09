@@ -1,4 +1,5 @@
 import 'package:dashboard/core/constant/color.dart';
+import 'package:dashboard/core/constant/routs.dart';
 import 'package:dashboard/view/widget/onbording/button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -65,11 +66,11 @@ class OnBording extends StatelessWidget {
                              Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                                children: [
- 
+                                
                                  AppCustomButtonOnbording(
                                   text:"signup".tr,
                                   onPressed: () {
-                                    Get.toNamed('/signup');
+                                    Get.toNamed(AppRoutes.signup);
                                   },
                                   color: AppColor.primary,
                                   textColor: Colors.white,
@@ -78,7 +79,7 @@ class OnBording extends StatelessWidget {
                                   text:   "signin".tr,
                                   onPressed: () {
                                    
-                                    Get.toNamed('/login');
+                                    Get.toNamed(AppRoutes.login);
                                   },
                                   color: AppColor.light,
                                   textColor: Colors.black,
