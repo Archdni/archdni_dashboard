@@ -1,4 +1,6 @@
- import 'package:dashboard/controller/otpChangePassword_controller.dart';
+ // ignore_for_file: depend_on_referenced_packages
+
+ import 'package:dashboard/controller/otpchangepassword_controller.dart';
 import 'package:dashboard/core/constant/color.dart';
 import 'package:dashboard/view/widget/auth/form/otpform.dart';
 import 'package:flutter/material.dart';

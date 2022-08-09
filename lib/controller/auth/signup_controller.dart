@@ -125,11 +125,10 @@ class SignUpControllerImp
   @override
   addData() async {
     final user = FirebaseAuth.instance.currentUser;
-    print(user!.uid);
-    try{
+     try{
     await firestore
         .collection('adminUsers')
-        .doc(user.uid)
+        .doc(user!.uid)
         .set({
       'username': username.text,
       'email': email.text,

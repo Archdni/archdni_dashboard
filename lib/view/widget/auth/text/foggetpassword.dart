@@ -1,5 +1,6 @@
 import 'package:dashboard/core/constant/routs.dart';
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
  
 class AppForgetPasswordText

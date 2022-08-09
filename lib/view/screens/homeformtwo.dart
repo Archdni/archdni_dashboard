@@ -5,8 +5,7 @@ import 'package:dashboard/core/constant/routs.dart';
 import 'package:dashboard/view/widget/home/homeormtwo.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:dashboard/view/widget/home/homeform.dart';
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 
 class HomeFormTwo extends StatelessWidget {
   const HomeFormTwo({Key? key}) : super(key: key);
@@ -18,12 +17,12 @@ class HomeFormTwo extends StatelessWidget {
           //logout button
           IconButton(
             
-            icon: Icon(Icons.exit_to_app),
+            icon: const Icon(Icons.exit_to_app),
             onPressed: () async{
               
            await FirebaseAuth.instance.signOut();
             Get.toNamed(AppRoutes.signup);
-              print("logout");
+              
          
    
            

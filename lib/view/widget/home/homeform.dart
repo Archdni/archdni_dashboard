@@ -1,8 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'package:dashboard/controller/backend/homeform_controller.dart';
-import 'package:dashboard/controller/home/pickimage_controller.dart';
-import 'package:dashboard/core/constant/color.dart';
+ import 'package:dashboard/core/constant/color.dart';
 import 'package:dashboard/core/constant/routs.dart';
 import 'package:dashboard/view/widget/auth/form/customformfield.dart';
 import 'package:dashboard/view/widget/home/imagepicker.dart';
@@ -17,9 +16,7 @@ class AppHomeForm extends StatelessWidget {
   Widget build(BuildContext context) {
     HomeFormControllerImp controller =
         Get.put(HomeFormControllerImp());
-    ImagePickerControllerImp
-        imagePickerControllerImp =
-        Get.put(ImagePickerControllerImp());
+    
     return Padding(
       padding: const EdgeInsets.symmetric(
           horizontal: 120),

@@ -4,9 +4,9 @@ import 'package:dashboard/view/widget/auth/authbutton.dart';
 import 'package:dashboard/view/widget/auth/form/customformfield.dart';
 import 'package:dashboard/view/widget/auth/text/foggetpassword.dart';
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
-import 'package:ionicons/ionicons.dart';
- 
+  
 
 class AppLoginForm extends StatelessWidget {
   const AppLoginForm({Key? key})

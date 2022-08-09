@@ -6,8 +6,7 @@ import 'package:dashboard/core/services/services.dart';
 import 'package:dashboard/localization/transilation.dart';
 
 import 'package:dashboard/root.dart';
-import 'package:dashboard/test.dart';
-import 'package:dashboard/view/screens/home.dart';
+ import 'package:dashboard/view/screens/home.dart';
 import 'package:dashboard/view/screens/onbording.dart';
 import 'package:dashboard/view/widget/language/changelocal.dart';
 import 'package:flutter/material.dart';
