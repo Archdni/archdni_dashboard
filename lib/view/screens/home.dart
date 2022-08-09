@@ -1,9 +1,9 @@
-import 'package:dashboard/controller/auth/signup_controller.dart';
-import 'package:dashboard/core/constant/color.dart';
+ import 'package:dashboard/core/constant/color.dart';
 import 'package:dashboard/core/constant/routs.dart';
 import 'package:dashboard/view/widget/home/homeform.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
 
 class Home extends StatelessWidget {
@@ -21,12 +21,12 @@ class Home extends StatelessWidget {
           //logout button
           IconButton(
             
-            icon: Icon(Icons.exit_to_app),
+            icon: const Icon(Icons.exit_to_app),
             onPressed: () async{
               
            await FirebaseAuth.instance.signOut();
             Get.toNamed(AppRoutes.signup);
-              print("logout");
+               
          
    
            

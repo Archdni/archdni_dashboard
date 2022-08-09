@@ -1,6 +1,7 @@
  
 import 'package:dashboard/core/constant/color.dart';
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
 
 class AppCustomButtonOnbording

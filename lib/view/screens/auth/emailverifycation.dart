@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:dashboard/controller/auth/verifyamail_contoller.dart';
 import 'package:dashboard/core/constant/color.dart';
 import 'package:dashboard/view/widget/auth/form/otpform.dart';

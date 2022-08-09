@@ -2,6 +2,7 @@ import 'package:dashboard/core/constant/color.dart';
 import 'package:dashboard/core/constant/routs.dart';
 import 'package:dashboard/view/widget/onbording/button.dart';
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
 
 class OnBording extends StatelessWidget {

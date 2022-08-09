@@ -2,6 +2,7 @@
 import 'package:dashboard/view/widget/auth/form/forgetpasswordform.dart';
 import 'package:dashboard/view/widget/auth/text/signintext.dart';
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
  
  

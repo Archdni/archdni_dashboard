@@ -4,6 +4,7 @@ import 'package:dashboard/view/widget/auth/form/loginform.dart';
 import 'package:dashboard/view/widget/auth/text/haveacount.dart';
 import 'package:dashboard/view/widget/auth/text/signintext.dart';
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
 
 class Login extends StatelessWidget {

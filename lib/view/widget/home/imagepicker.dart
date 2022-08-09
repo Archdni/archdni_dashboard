@@ -1,8 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'package:dashboard/controller/home/pickimage_controller.dart';
-import 'package:dashboard/controller/test.dart';
-import 'package:dashboard/core/constant/color.dart';
+ import 'package:dashboard/core/constant/color.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 

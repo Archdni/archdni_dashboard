@@ -3,9 +3,9 @@ import 'package:dashboard/core/constant/color.dart';
 import 'package:dashboard/view/widget/auth/authbutton.dart';
 import 'package:dashboard/view/widget/auth/form/customformfield.dart';
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:get/get.dart';
-import 'package:ionicons/ionicons.dart';
- 
+  
  
 class AppResetPassowrdForm extends StatelessWidget {
   const AppResetPassowrdForm({Key? key}) : super(key: key);

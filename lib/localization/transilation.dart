@@ -111,6 +111,8 @@ class AppTranslations extends Translations {
           "latitude and longitude must be number":
               "يجب أن يكون خط الطول والعرض أرقام",
               "student count must be number" : "يجب أن يكون عدد الطلبة أرقام",
+              "SignUpDone": "تم التسجيل بنجاح",
+              "we will verify your account and then you will be able to login": "سنتأكد من حسابك وسنكون على اتصال معك بعد تأكيد الحساب",
         },
         "en": {
           "onbording": "Welcome to the app ",
@@ -202,6 +204,8 @@ class AppTranslations extends Translations {
               "Enter School Students Number",
           "school_gender_type":
               "School Gender Type",
+          "SignUpDone": "SignUpDone",
+          "we will verify your account and then you will be able to login" : "we will verify your account and then you will be able to login"
 
         }
       };
