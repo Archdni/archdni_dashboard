@@ -6,6 +6,7 @@ import 'package:dashboard/view/screens/homeformtwo.dart';
 import 'package:dashboard/view/screens/auth/loggin.dart';
 import 'package:dashboard/view/screens/auth/signup.dart';
 import 'package:dashboard/view/screens/home.dart';
+import 'package:dashboard/view/screens/signupdone.dart';
 import 'package:flutter/material.dart';
 import 'core/constant/routs.dart';
 
@@ -24,4 +25,6 @@ Map<String, Widget Function(BuildContext)>
   AppRoutes.home: (context) => const Home(),
   AppRoutes.homeFormTwo: (context) =>
       const HomeFormTwo(),
+  AppRoutes.signupdone: (context) =>
+      const SignUpDone(),
 };

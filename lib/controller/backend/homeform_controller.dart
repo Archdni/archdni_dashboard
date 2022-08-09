@@ -108,6 +108,8 @@ class HomeFormControllerImp
     await uploadImg();
     double lat = double.parse(latitude.text);
     double long = double.parse(longitude.text);
+    double student = double.parse(studentCount.text);
+    double rating = 0.0;
     try {
       await firestore
           .collection('schools')
@@ -122,11 +124,14 @@ class HomeFormControllerImp
         'address': address.text,
         'latitude': lat ,
         'longitude': long ,
-        'students': studentCount.text,
+        'students': student,
         'gender': schoolgender.text,
         'price': schoolprice.text,
         'image': imagePickerTwoControllerImp.url!,
+        'rating': rating,
       });
+
+      Get.offNamed(AppRoutes.signupdone);
     } catch (e) {
       Get.snackbar('title', e.toString(),
           backgroundColor: Colors.red,
