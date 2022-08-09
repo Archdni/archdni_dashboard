@@ -50,11 +50,10 @@ class MyApp extends StatelessWidget {
               color: Colors.black, fontSize: 25),
         ),
       ),
-      home:
-      authStateConroller.isuserloggedin
+      home:  authStateConroller.isuserloggedin
           ? const Home()
           : const OnBording(),
-         
+        
       routes: routes,
     );
   }

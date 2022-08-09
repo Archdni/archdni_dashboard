@@ -1,21 +1,20 @@
 // ignore_for_file: depend_on_referenced_packages
-
-import 'package:dashboard/controller/home/pickimage_controller.dart';
-import 'package:dashboard/controller/test.dart';
+import 'package:dashboard/controller/home/pickimagetwo_controller.dart';
 import 'package:dashboard/core/constant/color.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
-class AppImagePicker extends StatelessWidget {
-  const AppImagePicker({Key? key})
+class AppImagePickerTwo extends StatelessWidget {
+  const AppImagePickerTwo({Key? key})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    ImagePickerControllerImp
+    ImagePickerTwoControllerImp
         imagePickerControllerImp =
-        Get.put(ImagePickerControllerImp());
-    return GetBuilder<ImagePickerControllerImp>(
+        Get.put(ImagePickerTwoControllerImp());
+    return GetBuilder<
+        ImagePickerTwoControllerImp>(
       init: imagePickerControllerImp,
       builder: (controller) {
         return Padding(
@@ -41,7 +40,7 @@ class AppImagePicker extends StatelessWidget {
                 },
               ),
               imagePickerControllerImp
-                          .bytesData !=
+                          .bytesDataTwo !=
                       null
                   ? Padding(
                       padding: const EdgeInsets
@@ -49,7 +48,7 @@ class AppImagePicker extends StatelessWidget {
                           horizontal: 20),
                       child: Image.memory(
                           imagePickerControllerImp
-                              .bytesData!,
+                              .bytesDataTwo!,
                           width: 80,
                           height: 80),
                     )

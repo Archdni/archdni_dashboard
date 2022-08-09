@@ -1,6 +1,8 @@
 import 'package:dashboard/controller/auth/signup_controller.dart';
 import 'package:dashboard/core/constant/color.dart';
+import 'package:dashboard/core/constant/routs.dart';
 import 'package:dashboard/view/widget/home/homeform.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,6 +17,23 @@ class Home extends StatelessWidget {
         title: Text('Home'.tr),
         centerTitle: true,
         automaticallyImplyLeading: false,
+        actions: [
+          //logout button
+          IconButton(
+            
+            icon: Icon(Icons.exit_to_app),
+            onPressed: () async{
+              
+           await FirebaseAuth.instance.signOut();
+            Get.toNamed(AppRoutes.signup);
+              print("logout");
+         
+   
+           
+            },
+          ),
+        ],
+          
       ),
       body: Row(
         children: [

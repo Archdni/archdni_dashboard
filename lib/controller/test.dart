@@ -1,28 +1,28 @@
-// ignore_for_file: depend_on_referenced_packages, prefer_const_constructors
+// ignore_for_file: avoid_web_libraries_in_flutter
+
 import 'dart:typed_data';
 
+import 'package:dashboard/controller/auth/signup_controller.dart';
+import 'package:dashboard/controller/backend/homeform_controller.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 import 'dart:convert';
 
-abstract class ImagePickerController
+abstract class TestController
     extends GetxController {
   List<int>? selectedFile;
-  final storageRef =
-      FirebaseStorage.instance.ref();
-  late String? url;
-  Uint8List? bytesData;
+  final storageRef = FirebaseStorage.instance.ref();
 
+  Uint8List? bytesData;
+ 
   startWebFilePicker();
   upload();
 }
 
-class ImagePickerControllerImp
-    extends ImagePickerController {
+class TestControllerImp extends TestController {
   @override
   startWebFilePicker() async {
     html.FileUploadInputElement uploadInput =
@@ -46,26 +46,34 @@ class ImagePickerControllerImp
         update();
       });
       reader.readAsDataUrl(file);
-    });
-  }
 
+      
+    });
+   
+     
+     
+  }
+  
   @override
   upload() async {
-    final user =
-        FirebaseAuth.instance.currentUser;
-
-    try {
-      final ref = FirebaseStorage.instance
-          .ref()
-          .child('${user!.uid}/logo.jpg');
-      final uploadTask =
-          await ref.putData(bytesData!);
-      url = await uploadTask.ref.getDownloadURL();
-    } catch (e) {
+    final user = FirebaseAuth.instance.currentUser;
+   
+    try 
+   { final  ref = FirebaseStorage.instance.ref().child('${"user!.uid"}/myimage.jpg');
+    final   uploadTask = await ref.putData(bytesData!);
+    final  url = await uploadTask.ref.getDownloadURL();
+    print(url);
+    }
+    catch(e)
+    {
+      
       Get.snackbar("Erorr".tr, e.toString(),
           snackPosition: SnackPosition.BOTTOM,
           backgroundColor: Colors.red,
-          colorText: Colors.white);
+         colorText: Colors.white
+       
+          );
     }
+    
   }
 }

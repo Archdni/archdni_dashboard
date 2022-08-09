@@ -1,205 +1,164 @@
 // ignore_for_file: depend_on_referenced_packages
-  import 'package:dashboard/controller/home/pickimage_controller.dart';
+
+import 'dart:typed_data';
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:html' as html;
+import 'package:dashboard/controller/test.dart';
+import 'dart:convert';
+import 'package:get/get.dart';
+
 import 'package:flutter/material.dart';
-  import 'package:get/get.dart';
-/*
-class UploadPage extends StatefulWidget {
-  const UploadPage({Key? key}) : super(key: key);
+
+class ImageUploadScreen extends StatefulWidget {
+  const ImageUploadScreen({Key? key})
+      : super(key: key);
 
   @override
-  _UploadPageState createState() => _UploadPageState();
+  State<ImageUploadScreen> createState() =>
+      _ImageUploadScreenState();
 }
 
-class _UploadPageState extends State<UploadPage> {
-  ImagePickerControllerImp  imagePickerControllerImp =
-      Get.put(ImagePickerControllerImp());
-  
+class _ImageUploadScreenState
+    extends State<ImageUploadScreen> {
+  List<int>? _selectedFile;
+  Uint8List? _bytesData;
 
-  @override
-  Widget build(BuildContext context) {
-    double _screenwidth = MediaQuery.of(context).size.width,
-        _screenheight = MediaQuery.of(context).size.height;
-    return LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) {
-      if (constraints.maxWidth < 480) {
-        return displayPhoneUploadFormScreen(_screenwidth, _screenheight);
-      } else {
-        return displayWebUploadFormScreen(_screenwidth, _screenheight);
-      }
+  startWebFilePicker() async {
+    html.FileUploadInputElement uploadInput =
+        html.FileUploadInputElement();
+    uploadInput.multiple = true;
+    uploadInput.draggable = true;
+    uploadInput.click();
+
+    uploadInput.onChange.listen((event) {
+      final files = uploadInput.files;
+      final file = files![0];
+      final reader = html.FileReader();
+
+      reader.onLoadEnd.listen((event) {
+        setState(() {
+          _bytesData = Base64Decoder().convert(
+              reader.result
+                  .toString()
+                  .split(",")
+                  .last);
+          _selectedFile = _bytesData;
+        });
+      });
+      reader.readAsDataUrl(file);
     });
   }
 
-  displayPhoneUploadFormScreen(_screenwidth, _screenheight) {
-    return Container();
-  }
-
-  displayWebUploadFormScreen(_screenwidth, _screenheight) {
-    return OKToast(
-        child: Scaffold(
-      body: Column(
-        children: [
-          const SizedBox(
-            height: 100.0,
-          ),
-          Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12.0),
-                color: Colors.white70,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.shade200,
-                    offset: const Offset(0.0, 0.5),
-                    blurRadius: 30.0,
-                  )
-                ]),
-            width: _screenwidth * 0.7,
-            height: 300.0,
-            child: Center(
-              child: imagePickerControllerImp.itemPhotosWidgetList.isEmpty
-                  ? Center(
-                      child: MaterialButton(
-                        onPressed: imagePickerControllerImp.pickPhotoFromGallery ,
-                        child: Container(
-                          alignment: Alignment.bottomCenter,
-                          child: Center(
-                            child: Image.network(
-                              "https://static.thenounproject.com/png/3322766-200.png",
-                              height: 100.0,
-                              width: 100.0,
-                            ),
-                          ),
-                        ),
-                      ),
-                    )
-                  : SingleChildScrollView(
-                      scrollDirection: Axis.vertical,
-                      child: Wrap(
-                        spacing: 5.0,
-                        direction: Axis.horizontal,
-                        children: imagePickerControllerImp.itemPhotosWidgetList,
-                        alignment: WrapAlignment.spaceEvenly,
-                        runSpacing: 10.0,
-                      ),
-                    ),
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Center(
+            child: Column(
+          children: [
+            Text('Let\'s upload Image'),
+            SizedBox(height: 20),
+            MaterialButton(
+              color: Colors.pink,
+              elevation: 8,
+              highlightElevation: 2,
+              shape: RoundedRectangleBorder(
+                  borderRadius:
+                      BorderRadius.circular(8)),
+              textColor: Colors.white,
+              child: Text("Select Photo"),
+              onPressed: () {
+                startWebFilePicker();
+              },
             ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(
-                  top: 50.0,
-                  left: 100.0,
-                  right: 100.0,
-                ),
-                child: FlatButton(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20.0, vertical: 15.0),
-                    color: const Color.fromRGBO(0, 35, 102, 1),
-                    onPressed: imagePickerControllerImp.uploading ? null : () => imagePickerControllerImp.upload(),
-                    child: imagePickerControllerImp.uploading
-                        ? const SizedBox(
-                            child: CircularProgressIndicator(),
-                            height: 15.0,
-                          )
-                        : const Text(
-                            "Add",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )),
-              ),
-            ],
-          ),
-        ],
+            Divider(
+              color: Colors.teal,
+            ),
+            _bytesData != null
+                ? Image.memory(_bytesData!,
+                    width: 200, height: 200)
+                : Container(),
+            MaterialButton(
+              color: Colors.purple,
+              elevation: 8,
+              highlightElevation: 2,
+              shape: RoundedRectangleBorder(
+                  borderRadius:
+                      BorderRadius.circular(8)),
+              textColor: Colors.white,
+              child: Text("Send file to server"),
+              onPressed: () {
+                /*   if (_selectedFile != null) {
+                  uploadFile();
+                }*/
+              },
+            ),
+          ],
+        )),
       ),
-    ));
+    );
   }
+}
 
-  
-}*/
-
-////////////////////////////////
-class AppImagePicker1
-    extends GetView<ImagePickerControllerImp> {
-  const AppImagePicker1({Key? key})
+class AppImagePicker extends StatelessWidget {
+  const AppImagePicker({Key? key})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    ImagePickerControllerImp
-        imagePickerControllerImp =
-        Get.put(ImagePickerControllerImp());
-    return   Column(
-    children: [
- 
-      Container(
-          decoration: BoxDecoration(
+    TestControllerImp testController =
+        Get.put(TestControllerImp());
+    return GetBuilder<TestController>(
+      init: testController,
+      builder: (controller) {
+        return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Center(
+            child: Column(
+          children: [
+            Text('Let\'s upload Image'),
+            SizedBox(height: 20),
+            MaterialButton(
+              color: Colors.pink,
+              elevation: 8,
+              highlightElevation: 2,
+              shape: RoundedRectangleBorder(
+                  borderRadius:
+                      BorderRadius.circular(8)),
+              textColor: Colors.white,
+              child: Text("Select Photo"),
+              onPressed: () {
+                testController.startWebFilePicker();
+              },
+            ),
              
-              borderRadius:
-                  BorderRadius.circular(12.0),
-              color: Color.fromARGB(179, 204, 204, 204),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.shade200,
-                  offset:
-                      const Offset(0.0, 0.5),
-                  blurRadius: 30.0,
-                )
-              ]),
-          width: 250,
-          height: 50,
-          child: GetBuilder <ImagePickerControllerImp>(
-            init: imagePickerControllerImp,
-            builder: (controller) =>
-              Center(
-                child: imagePickerControllerImp
-                        .itemPhotosWidgetList
-                        .isEmpty
-                    ? Center(
-                        child: MaterialButton(
-                          onPressed:
-                              imagePickerControllerImp
-                                  .pickPhotoFromGallery,
-                          child: Container(
-                            alignment: Alignment
-                                .bottomCenter,
-                            child: Center(
-                              child: Image
-                                  .network(
-                                "https://static.thenounproject.com/png/3322766-200.png",
-                                height: 100.0,
-                                width: 100.0,
-                              ),
-                            ),
-                          ),
-                        ),
-                      )
-                    : SingleChildScrollView(
-                        scrollDirection:
-                            Axis.vertical,
-                        child: Wrap(
-                          spacing: 5.0,
-                          direction:
-                              Axis.horizontal,
-                          alignment:
-                              WrapAlignment
-                                  .spaceEvenly,
-                          runSpacing: 10.0,
-                          children:
-                              imagePickerControllerImp
-                                  .itemPhotosWidgetList,
-                        ),
-                      ),
-              ),
-            
-          )),
-    ],
-      ) ;
+             testController.bytesData != null
+                ? Image.memory( testController.bytesData!,
+                    width: 100, height: 100)
+                : Container(),
+           /* MaterialButton(
+              color: Colors.purple,
+              elevation: 8,
+              highlightElevation: 2,
+              shape: RoundedRectangleBorder(
+                  borderRadius:
+                      BorderRadius.circular(8)),
+              textColor: Colors.white,
+              child: Text("Send file to server"),
+              onPressed: () {
+                testController.upload();
+                /*   if (_selectedFile != null) {
+                  uploadFile();
+                }*/
+              },
+            ),*/
+          ],
+        )),
+      ),
+    );
+      },
+    );
   }
 }

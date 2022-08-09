@@ -32,7 +32,7 @@ class VerifyEmailControllerImp
 
   @override
   goToHome() {
-    Get.offNamed(AppRoutes.home);
+    Get.offAllNamed(AppRoutes.home);
   }
 
   @override

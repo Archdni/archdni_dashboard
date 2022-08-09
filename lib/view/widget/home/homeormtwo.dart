@@ -1,30 +1,27 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'package:dashboard/controller/backend/homeform_controller.dart';
-import 'package:dashboard/controller/home/pickimage_controller.dart';
-import 'package:dashboard/core/constant/color.dart';
-import 'package:dashboard/core/constant/routs.dart';
+ import 'package:dashboard/core/constant/color.dart';
 import 'package:dashboard/view/widget/auth/form/customformfield.dart';
-import 'package:dashboard/view/widget/home/imagepicker.dart';
+ import 'package:dashboard/view/widget/home/imagepickertwo.dart';
 import 'package:dashboard/view/widget/onbording/button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AppHomeForm extends StatelessWidget {
-  const AppHomeForm({Key? key}) : super(key: key);
+class AppHomeFormTwo extends StatelessWidget {
+  const AppHomeFormTwo({Key? key})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     HomeFormControllerImp controller =
         Get.put(HomeFormControllerImp());
-    ImagePickerControllerImp
-        imagePickerControllerImp =
-        Get.put(ImagePickerControllerImp());
+
     return Padding(
       padding: const EdgeInsets.symmetric(
           horizontal: 120),
       child: Padding(
-        padding: const EdgeInsets.only(top: 60),
+        padding: const EdgeInsets.only(top: 20),
         child: Column(
           children: [
             Text(
@@ -34,60 +31,69 @@ class AppHomeForm extends StatelessWidget {
                   fontWeight: FontWeight.w500),
             ),
             AppCustomFormFaild(
-              lable: "school_name".tr,
-              hint: "enter_school_name".tr,
-              icon: Icons.school_outlined,
+              lable: "school_address".tr,
+              hint: "enter_school_address".tr,
+              icon:
+                  Icons.add_location_alt_outlined,
               keyboardType: TextInputType.text,
               obscureText: false,
-              controller: controller.schoolName,
+              controller: controller.address,
             ),
             AppCustomFormFaild(
-              lable: "school_description".tr,
-              hint: "enter_school_description".tr,
-              icon: Icons.home_outlined,
+              lable: "school_latitude".tr,
+              hint: "enter_school_latitude".tr,
+              icon: Icons.location_on_outlined,
               keyboardType: TextInputType.text,
               obscureText: false,
-              controller:
-                  controller.schoolDescription,
+              controller: controller.latitude,
             ),
             AppCustomFormFaild(
-              lable: "school_phone".tr,
-              hint: "enter_school_phone".tr,
-              icon: Icons.phone_outlined,
+              lable: "school_longitude".tr,
+              hint: "enter_school_longitude".tr,
+              icon: Icons.location_on_outlined,
+              keyboardType: TextInputType.text,
+              obscureText: false,
+              controller: controller.longitude,
+            ),
+            AppCustomFormFaild(
+              lable: "school_students_number".tr,
+              hint: "enter_school_students_number"
+                  .tr,
+              icon: Icons.people_outline,
               keyboardType: TextInputType.phone,
               obscureText: false,
-              controller: controller.schoolPhone,
+              controller: controller.studentCount,
             ),
             AppCustomFormFaild(
-              lable: "school_email".tr,
-              hint: "enter_school_email".tr,
-              icon: Icons.email_outlined,
+              lable: "school_gender_type".tr,
+              hint: "enter_school_gender_type".tr,
+              icon: Icons.person_outline,
               keyboardType:
                   TextInputType.emailAddress,
               obscureText: false,
-              controller: controller.schoolEmail,
+              controller: controller.schoolgender,
             ),
             AppCustomFormFaild(
-              lable: "school_city".tr,
-              hint: "enter_school_city".tr,
-              icon: Icons.location_city_outlined,
+              lable: "school_price".tr,
+              hint: "enter_school_price".tr,
+              icon: Icons.attach_money_outlined,
               keyboardType: TextInputType.url,
               obscureText: false,
-              controller: controller.schoolCity,
+              controller: controller.schoolprice,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(
-                  vertical: 20),
+                  horizontal: 20),
               child: Row(
                 mainAxisAlignment:
                     MainAxisAlignment.start,
                 children: [
-                  const AppImagePicker(),
+                  const AppImagePickerTwo(),
                   const SizedBox(
                     width: 20,
                   ),
                   Text(
-                    "select_school_logo".tr,
+                    "enter_image_from_school".tr,
                     style: const TextStyle(
                       fontSize: 20,
                     ),
@@ -103,8 +109,7 @@ class AppHomeForm extends StatelessWidget {
                     text: 'Submit'.tr,
                     onPressed: () async {
                       await controller
-                          .validtion();
-                          Get.offNamed(AppRoutes.homeFormTwo);
+                          .secounValidation();
                     },
                     color: AppColor.primary,
                     textColor: Colors.white)

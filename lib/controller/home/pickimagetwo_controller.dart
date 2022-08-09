@@ -9,20 +9,20 @@ import 'package:get/get.dart';
 import 'dart:html' as html;
 import 'dart:convert';
 
-abstract class ImagePickerController
+abstract class ImagePickerTwoController
     extends GetxController {
   List<int>? selectedFile;
   final storageRef =
       FirebaseStorage.instance.ref();
   late String? url;
-  Uint8List? bytesData;
+  Uint8List? bytesDataTwo;
 
   startWebFilePicker();
   upload();
 }
 
-class ImagePickerControllerImp
-    extends ImagePickerController {
+class ImagePickerTwoControllerImp
+    extends ImagePickerTwoController {
   @override
   startWebFilePicker() async {
     html.FileUploadInputElement uploadInput =
@@ -37,12 +37,12 @@ class ImagePickerControllerImp
       final reader = html.FileReader();
 
       reader.onLoadEnd.listen((event) {
-        bytesData = Base64Decoder().convert(reader
+        bytesDataTwo = Base64Decoder().convert(reader
             .result
             .toString()
             .split(",")
             .last);
-        selectedFile = bytesData;
+        selectedFile = bytesDataTwo;
         update();
       });
       reader.readAsDataUrl(file);
@@ -59,7 +59,7 @@ class ImagePickerControllerImp
           .ref()
           .child('${user!.uid}/logo.jpg');
       final uploadTask =
-          await ref.putData(bytesData!);
+          await ref.putData(bytesDataTwo!);
       url = await uploadTask.ref.getDownloadURL();
     } catch (e) {
       Get.snackbar("Erorr".tr, e.toString(),

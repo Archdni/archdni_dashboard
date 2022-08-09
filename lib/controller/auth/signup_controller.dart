@@ -92,8 +92,9 @@ class SignUpControllerImp
         email: email.text,
         password: confirmPassword.text,
       );
-      addData();
-      Get.toNamed(AppRoutes.emailVerify);
+     await  addData();
+       Get.toNamed(AppRoutes.emailVerify);
+     
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
         Get.snackbar(
@@ -123,13 +124,22 @@ class SignUpControllerImp
 
   @override
   addData() async {
+    final user = FirebaseAuth.instance.currentUser;
+    print(user!.uid);
+    try{
     await firestore
         .collection('adminUsers')
-        .doc(user!.uid)
+        .doc(user.uid)
         .set({
       'username': username.text,
       'email': email.text,
       'password': password.text,
     });
+   
+    } catch (e) {
+     Get.snackbar('Erorr', e.toString(),
+        backgroundColor: Colors.red,
+        colorText: Colors.white);
+    }
   }
 }
